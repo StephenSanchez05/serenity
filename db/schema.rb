@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 1) do
+ActiveRecord::Schema.define(version: 2020_05_09_221214) do
+
+  create_table "characters", force: :cascade do |t|
+    t.string "name"
+    t.integer "level"
+    t.string "backstory"
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_characters_on_user_id"
+  end
+
+  create_table "spells", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "user_id", null: false
+    t.integer "spell_id"
+    t.integer "character_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_spells_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -21,4 +42,6 @@ ActiveRecord::Schema.define(version: 1) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "characters", "users"
+  add_foreign_key "spells", "users"
 end

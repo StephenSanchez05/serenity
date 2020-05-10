@@ -1,4 +1,4 @@
 class Spell < ApplicationRecord
   belongs_to :user
-  belongs_to :character
+  has_and_belongs_to_many :characters
 end
