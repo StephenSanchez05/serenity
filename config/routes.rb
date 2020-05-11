@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :heros
   resources :characters
   resources :spells
   root 'welcome#home'

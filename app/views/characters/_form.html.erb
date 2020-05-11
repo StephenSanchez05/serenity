@@ -1,15 +1,16 @@
 <%= form_for post do |c| %>
     <%= c.label "Name" %>
-    <%= c.text_field :name %>
+    <%= c.text_field :name %><br>
     <%= c.label "Class" %>
-    <%= c.text_field :class %>
+    <%= c.text_field :warrior %><br>
     <%= c.label "Current Level" %>
-    <%= c.text_field :level %>
+    <%= c.text_field :level %><br>
     <%= c.label "Spells" %>
-    <%= c.collection_check_boxes :spell_ids, Spell.all, :id, :name %>
+    <%= c.collection_check_boxes :spell_ids, Spell.all, :id, :name %><br>
     <%= c.fields_for :spells, post.spells.build do |s| %>
-        <%= s.text_field :name %>
+        <%= s.text_field :name %><br>
         <% end %>
-    <%= c.label "Backstory" %>
-    <%= c.text_area :backstory %>
+    <%= c.label "Backstory" %><br>
+    <%= c.text_area :backstory %><br>
+    <%= c.submit %>
     <% end %>
