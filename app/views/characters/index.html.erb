@@ -1,1 +1,5 @@
-<h2>Characters Index</h2>
+<h2>Characters Index <%= @character.count %></h2><br>
+<%= @user.name %>
+<% @character.each do |c| %>
+    <%= c.name %><br>
+    <% end %>

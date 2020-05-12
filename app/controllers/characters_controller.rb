@@ -1,6 +1,8 @@
 class CharactersController < ApplicationController
 
     def index
+        @character = Character.all
+        @user = User.find_by(uid: auth['uid'])
     end
     
     def new
@@ -8,21 +10,26 @@ class CharactersController < ApplicationController
     end
 
     def create
-        character = Character.create(post_params)
-        redirect_to character
+        @character = Character.create(post_params)
+        redirect_to @character
     end
 
     def edit
     end
 
     def show
+        @character = Character.find(params[:id])
     end
 
 
     private
 
     def post_params
-        params.require(:name, :warrior, :level).permit(:spell, :backstory, spell_ids:[])
+        params.require(:character).permit(:name, :warrior, :level, :spells, :backstory, :user_id, :spell_ids[])
+    end
+
+    def auth
+        request.env['omniauth.auth']
     end
 
 end

@@ -27,6 +27,10 @@ gem 'dotenv-rails'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
+gem 'activerecord', '<= 6.0.3'
+gem 'rake'
+
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
