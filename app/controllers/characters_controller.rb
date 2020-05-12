@@ -2,7 +2,7 @@ class CharactersController < ApplicationController
 
     def index
         @character = Character.all
-        @user = User.find_by(uid: auth['uid'])
+        @user = User.all
     end
     
     def new

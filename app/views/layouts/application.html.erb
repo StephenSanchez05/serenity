@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_tag 'application', 'data-turbolinks-track': 'reload' %>
 <style>
 h1 { text-align: center; color: rgb(255, 52, 0); font-family: cursive;}
 nav { text-align: center; background-color: grey; padding: 0 100px;}
 </style>
-    <h1>Serenity</h1>
-    <nav><%= link_to 'Home', '/welcome/home' %>  <%= link_to 'Characters', '/characters' %>  <%= link_to 'Spells', '/spells' %></nav>
     </head>
     <br>
     <body>
+    <h1>Serenity</h1>
+    <nav><%= button_to "Home", '/welcome/home', :method => :get %>  <%= button_to "Characters", '/characters', :method => :get %>  <%= button_to "Spells", '/spells', :method => :get %>  <%= button_to "Log Out", logout_path, :method => :delete %></nav>
 
     <%= yield %>
 
