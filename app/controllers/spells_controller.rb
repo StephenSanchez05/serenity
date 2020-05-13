@@ -30,6 +30,9 @@ class SpellsController < ApplicationController
 
     def show
         @spells = Spell.find(params[:id])
+        if !belong_to_user?
+            redirect_to '/spells'
+        end
     end
 
     def destroy
@@ -42,5 +45,9 @@ class SpellsController < ApplicationController
 
     def post_params
         params.require(:spell).permit(:name, :description, :user_id)
+    end
+
+    def belong_to_user?
+        @spells.user_id == session[:user_id]
     end
 end

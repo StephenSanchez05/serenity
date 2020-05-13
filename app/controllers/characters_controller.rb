@@ -31,6 +31,9 @@ class CharactersController < ApplicationController
     def show
         @character = Character.find(params[:id])
         @user = User.find(session[:user_id])
+        if !belong_to_user?
+            redirect_to '/characters'
+        end
     end
 
     def destroy
@@ -44,6 +47,10 @@ class CharactersController < ApplicationController
 
     def post_params
         params.require(:character).permit(:name, :warrior, :level, :spells, :backstory, :user_id)
+    end
+
+    def belong_to_user?
+        @character.user_id == session[:user_id]
     end
 
 end
