@@ -1,7 +1,7 @@
 <%= form_for @spells do |s| %>
-    <%= label "Name" %>
+    <%= s.label "Name" %>     
     <%= s.text_field :name %><br>
-    <%= label "Description" %>
-    <%= s.text_field :name $>
+    <%= s.label "Description" %>
+    <%= s.text_area :description %><br>
     <%= s.submit %>
     <% end %>

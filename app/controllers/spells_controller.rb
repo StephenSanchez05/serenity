@@ -16,11 +16,11 @@ class SpellsController < ApplicationController
     end
 
     def edit
-        @spell = Spell.find(params[:id])
+        @spells = Spell.find(params[:id])
     end
 
     def update
-        @spell = Spell.find(params[:id])
+        @spells = Spell.find(params[:id])
         if @spell.update(spell)
             redirect_to @spell
         else
@@ -29,6 +29,7 @@ class SpellsController < ApplicationController
     end
 
     def show
+        @spells = Spell.find(params[:id])
     end
 
     def destroy
