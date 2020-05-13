@@ -16,11 +16,27 @@ class CharactersController < ApplicationController
     end
 
     def edit
+        @character = Character.find(params[:id])
+    end
+
+    def update
+        @character = Character.find(params[:id])
+        if @character.update(post_params)
+            redirect_to @character
+        else
+            render :edit
+        end
     end
 
     def show
         @character = Character.find(params[:id])
         @user = User.find(session[:user_id])
+    end
+
+    def destroy
+        @character = Character.find(params[:id])
+        @character.destroy
+        redirect_to '/characters'
     end
 
 
