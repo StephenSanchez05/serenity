@@ -1,5 +1,5 @@
 class Character < ApplicationRecord
     belongs_to :user
-    has_many :heroes
-    has_many :spells, through: :heroes
+    has_many :heros
+    has_many :spells, through: :heros
 end

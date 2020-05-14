@@ -24,14 +24,14 @@ ActiveRecord::Schema.define(version: 2020_05_11_134328) do
     t.index ["user_id"], name: "index_characters_on_user_id"
   end
 
-  create_table "heroes", force: :cascade do |t|
+  create_table "heros", force: :cascade do |t|
     t.string "name"
     t.integer "character_id", null: false
     t.integer "spell_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["character_id"], name: "index_heroes_on_character_id"
-    t.index ["spell_id"], name: "index_heroes_on_spell_id"
+    t.index ["character_id"], name: "index_heros_on_character_id"
+    t.index ["spell_id"], name: "index_heros_on_spell_id"
   end
 
   create_table "spells", force: :cascade do |t|
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2020_05_11_134328) do
   end
 
   add_foreign_key "characters", "users"
-  add_foreign_key "heroes", "characters"
-  add_foreign_key "heroes", "spells"
+  add_foreign_key "heros", "characters"
+  add_foreign_key "heros", "spells"
   add_foreign_key "spells", "users"
 end

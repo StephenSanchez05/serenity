@@ -1,5 +1,5 @@
 <h2>Characters Index</h2><br>
 <h3>Welcome <%= @user.name %>!  Below is a list of all your characters.  If you would like to create a new character please <%= link_to "Click Here!", '/characters/new' %></h3><br>
 <% @user.characters.each do |c| %>
-   <h3><%= c.name %> <%= link_to "View", character_path(c) %> <%= button_to "Delete Character", c, method: "delete" %></h3><br>
+   <h3><%= c.name %> <%= link_to "View", character_path(c) %> <%= link_to "Edit", edit_character_path(c) %> <%= button_to "Delete Character", c, method: "delete" %></h3><br>
     <% end %>

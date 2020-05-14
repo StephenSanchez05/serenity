@@ -46,7 +46,7 @@ class CharactersController < ApplicationController
     private
 
     def post_params
-        params.require(:character).permit(:name, :warrior, :level, :spells, :backstory, :user_id)
+        params.require(:character).permit(:name, :warrior, :level, :backstory, :user_id, spell_ids:[])
     end
 
     def belong_to_user?

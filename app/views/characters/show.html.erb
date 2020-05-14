@@ -1,3 +1,7 @@
-<h3><%= @character.name %> the <%= @character.warrior %>    -    Level <%= @character.level %></h3><br>
+<h3><%= @character.name %> the <%= @character.warrior %>    -    Level <%= @character.level %>  <%= link_to "Edit", edit_character_path(@character) %></h3><br>
+<h3>Their Spells</h3><br>
+<% @character.spells.each do |s| %>
+    <%= s.name %><br>
+    <% end %>
 <h3>Their story thus far:</h3><br>
 <%= @character.backstory %>
