@@ -31,3 +31,10 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    models:
+      character: Customer
+    attributes:
+      character:
+        warrior: "Class"
+

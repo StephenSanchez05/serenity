@@ -12,7 +12,11 @@ class CharactersController < ApplicationController
         @user = User.find(session[:user_id])
         @character = Character.create(post_params)
         @character.update(user_id: @user.id)
+        if @character.save
         redirect_to @character
+        else
+            render :new
+        end
     end
 
     def edit
