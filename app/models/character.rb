@@ -5,4 +5,7 @@ class Character < ApplicationRecord
 
     scope :low_level, -> { where("level < 10")}
     scope :high_level, -> { where("level >= 10")}
+
+    validates :name, presence: true
+    validates :warrior, presence: true
 end

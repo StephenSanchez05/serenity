@@ -36,8 +36,7 @@ class SpellsController < ApplicationController
     end
 
     def destroy
-        @spell = Spell.find(params[:id])
-        @spell.destroy
+        Spell.find(params[:id]).destroy
         redirect_to '/spells'
     end
 

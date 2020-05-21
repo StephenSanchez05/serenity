@@ -1,5 +1,7 @@
 <h2>Spells Index</h2><br>
 <h3>Welcome <%= @user.name %>!  Below is a list of all your Spells.  If you would like to create a new spell please <%= link_to "Click Here!", '/spells/new' %></h3><br>
+<ul>
 <% @user.spells.each do |s| %>
-    <h3><%= s.name %> <%= link_to "View", spell_path(s) %> <%= link_to "Edit", edit_spell_path(s) %> <%= button_to "Delete Spell", s, method: "delete" %></h3><br>
+    <li><%= s.name %> <%= link_to "View", spell_path(s) %> <%= link_to "Edit", edit_spell_path(s) %> <%= button_to "Delete Spell", s, method: "delete" %></li><br>
     <% end %>
+    </ul>

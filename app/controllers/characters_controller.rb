@@ -37,8 +37,7 @@ class CharactersController < ApplicationController
     end
 
     def destroy
-        @character = Character.find(params[:id])
-        @character.destroy
+        Character.find(params[:id]).destroy
         redirect_to '/characters'
     end
 

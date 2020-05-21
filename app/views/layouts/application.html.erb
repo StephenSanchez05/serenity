@@ -11,8 +11,8 @@ nav { text-align: center; background-color: grey; padding: 0 100px;}
     <br>
     <body>
     <h1>Serenity</h1>
-    <nav><%= button_to "Home", '/welcome/home', :method => :get %>  <%= button_to "Characters", '/characters', :method => :get %>  
-    <%= button_to "Spells", '/spells', :method => :get %>  <%= button_to "Log Out", logout_path, :method => :delete %></nav>
+    <nav><%= link_to "Home", '/welcome/home', :method => :get %>  <%= link_to "Characters", '/characters', :method => :get %>  
+    <%= link_to "Spells", '/spells', :method => :get %>  <%= button_to "Log Out", logout_path, :method => :delete %></nav>
 
     <%= yield %>
 
