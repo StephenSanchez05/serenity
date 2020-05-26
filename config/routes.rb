@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :characters
   resources :spells
   resources :heros
+  resources :users
+  
   root 'welcome#home'
   get 'welcome/home' => 'welcome#home'
 
