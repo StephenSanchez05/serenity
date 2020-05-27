@@ -5,7 +5,7 @@ class UsersController < ApplicationController
       end
   
       def create
-        @user = User.create(user_params)
+        @user = User.find_or_create(user_params)
         if @user.save
         session[:user_id] = @user.id
         redirect_to '/characters'
