@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   resources :characters
   resources :spells
   resources :heros
+  
+  get '/login' => 'users#new'
+  post '/login' => 'users#login'
+
   resources :users
   
   root 'welcome#home'

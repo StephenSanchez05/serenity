@@ -7,6 +7,7 @@ class CharactersController < ApplicationController
     end
     
     def new
+        @user = User.find(session[:user_id])
         @character = Character.new
     end
 
@@ -22,6 +23,7 @@ class CharactersController < ApplicationController
     end
 
     def edit
+        @user = User.find(session[:user_id])
         @character = Character.find(params[:id])
         if !belong_to_user?
             redirect_to '/characters'
@@ -29,6 +31,7 @@ class CharactersController < ApplicationController
     end
 
     def update
+        @user = User.find(session[:user_id])
         @character = Character.find(params[:id])
         if @character.update(post_params)
             redirect_to @character

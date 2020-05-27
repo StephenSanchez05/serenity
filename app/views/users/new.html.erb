@@ -9,10 +9,4 @@
   </div>
 <% end %>
 
-<%= form_for @user do |s| %>
-    <%= s.label "Name" %>     
-    <%= s.text_field :name %><br>
-    <%= s.label "Password" %>
-    <%= s.password_field :password %><br>
-    <%= s.submit %>
-    <% end %>
+<%= render 'form' %>
