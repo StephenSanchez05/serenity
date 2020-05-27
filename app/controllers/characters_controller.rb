@@ -23,6 +23,9 @@ class CharactersController < ApplicationController
 
     def edit
         @character = Character.find(params[:id])
+        if !belong_to_user?
+            redirect_to '/characters'
+        end
     end
 
     def update

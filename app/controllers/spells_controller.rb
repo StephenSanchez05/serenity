@@ -22,6 +22,9 @@ class SpellsController < ApplicationController
 
     def edit
         @spells = Spell.find(params[:id])
+        if !belong_to_user?
+            redirect_to '/spells'
+        end
     end
 
     def update
