@@ -7,7 +7,6 @@
     <%= c.text_field :level %><br>
     <%= c.label "Spells:" %>
     <%= c.collection_check_boxes :spell_ids, Spell.all, :id, :name %><br>
-    <%= c.label "Create a new Spell:" %>
     <%= c.label "Backstory:" %><br>
     <%= c.text_area :backstory %><br>
     <%= c.submit %>
