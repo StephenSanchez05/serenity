@@ -26,8 +26,8 @@ class SpellsController < ApplicationController
 
     def update
         @spells = Spell.find(params[:id])
-        if @spell.update(spell)
-            redirect_to @spell
+        if @spells.update(spell)
+            redirect_to @spells
         else
             render :edit
         end
