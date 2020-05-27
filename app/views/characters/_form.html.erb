@@ -8,9 +8,6 @@
     <%= c.label "Spells:" %>
     <%= c.collection_check_boxes :spell_ids, Spell.all, :id, :name %><br>
     <%= c.label "Create a new Spell:" %>
-    <%= c.fields_for :spells, @character.spells.build do |s| %>
-        <%= s.text_field :name %><br>
-        <% end %>
     <%= c.label "Backstory:" %><br>
     <%= c.text_area :backstory %><br>
     <%= c.submit %>
