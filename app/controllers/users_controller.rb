@@ -5,22 +5,17 @@ class UsersController < ApplicationController
     end
   
       def create
-        @user = User.create(user_params)
-        if @user.save
-        session[:user_id] = @user.id
-        redirect_to '/characters'
-        else
-        render :new
-        end
-      end
-
-      def login
-        user = User.find_by(name: params[:name])
-        if user && user.authenticate(params[:password])    
-        session[:user_id] = user.id       
-        redirect_to controller: 'character', action: 'index'
-        else
-          redirect_to '/new'
+         @user = User.find_by(name: params[:name])
+         if @user
+           redirect_to '/login'
+         else
+          @user = User.create(user_params)
+           if @user.save
+             session[:user_id] = @user.id
+             redirect_to '/characters'
+           else
+           render :new
+           end
         end
       end
 

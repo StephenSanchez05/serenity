@@ -1,4 +1,4 @@
-<%= form_for @user do |s| %>
+<%= form_for @user, :url => {:controller => "sessions", :action => "create"} do |s| %>
     <%= s.label "Name" %>     
     <%= s.text_field :name %><br>
     <%= s.label "Password" %>
