@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  resources :characters
+  resources :characters do
+    resources :heros
+  end
+
   resources :spells
-  resources :heros
+  
 
   
   get '/login' => 'sessions#new'

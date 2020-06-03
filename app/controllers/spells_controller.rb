@@ -13,7 +13,8 @@ class SpellsController < ApplicationController
     def create
         @user = User.find(session[:user_id])
         @spells = Spell.create(post_params)
-        if @spells.update(user_id: @user.id)
+        @spells.update(user_id: @user.id)
+        if @spells.save
         redirect_to @spells
         else
             render :new

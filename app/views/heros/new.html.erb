@@ -1,0 +1,6 @@
+<h2>Make a new Hero</h2><br>
+<%= form_for [@character, @hero], :url => {:controller => "heros", :action => "create"} do |h| %>
+    <%= h.label "Name:" %>
+    <%= h.text_field :name %><br>
+    <%= h.submit %>
+    <% end %>

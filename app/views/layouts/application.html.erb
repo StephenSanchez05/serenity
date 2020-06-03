@@ -13,7 +13,7 @@ fb { text-align: right;}
     <body>
     <h1>Serenity</h1>
     <nav><%= link_to "Home", '/welcome/home', :method => :get %>  <%= link_to "Characters", '/characters', :method => :get %>  
-    <%= link_to "Spells", '/spells', :method => :get %>  <%= button_to "Log Out", logout_path, :method => :delete %></nav>
+    <%= link_to "Spells", '/spells', :method => :get %> <%= button_to "Log Out", logout_path, :method => :delete %></nav>
 
     <%= yield %>
 

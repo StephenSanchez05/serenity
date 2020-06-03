@@ -1,14 +1,15 @@
 <h2>Characters Index</h2><br>
 <p>Welcome <%= @user.name %> <img src="<%= @user.image %>"></p><br>
+
 <p>Below is a list of all your characters.  If you would like to create a new character please <%= link_to "Click Here!", '/characters/new' %></p><br>
 <h3>Low Level Characters (Levels 1-9) </h3><br>
 <ul><% @user.characters.low_level.each do |c| %>
-   <li><%= c.name %> Level <%= c.level %> <%= link_to "View", character_path(c) %> <%= link_to "Edit", edit_character_path(c) %> <%= button_to "Delete Character", c, method: "delete" %></li><br>
+   <li><%= c.name %> Level <%= c.level %> <%= link_to "View", character_path(c) %> <%= link_to "Edit", edit_character_path(c) %> <%= link_to "Heroes", new_character_hero_path(c), :method => :get %> <%= button_to "Delete Character", c, method: "delete" %></li><br>
     <% end %>
     </ul>
 <h3>High Level Characters</h3><br>
 <ul>
 <% @user.characters.high_level.each do |c| %>
-   <li><%= c.name %> Level <%= c.level %> <%= link_to "View", character_path(c) %> <%= link_to "Edit", edit_character_path(c) %> <%= button_to "Delete Character", c, method: "delete" %></li><br>
+   <li><%= c.name %> Level <%= c.level %> <%= link_to "View", character_path(c) %> <%= link_to "Edit", edit_character_path(c) %> <%= link_to "Heroes", new_character_hero_path(c), :method => :get %> <%= button_to "Delete Character", c, method: "delete" %></li><br>
     <% end %>
    </ul>

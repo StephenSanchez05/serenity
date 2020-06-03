@@ -3,6 +3,7 @@ class Character < ApplicationRecord
     belongs_to :user
     has_many :heros, :dependent => :delete_all
     has_many :spells, through: :heros
+    accepts_nested_attributes_for :heros, :spells
 
     scope :low_level, -> { where("level < 10")}
     scope :high_level, -> { where("level >= 10")}
@@ -21,4 +22,6 @@ class Character < ApplicationRecord
             errors.add(:warrior, "We do not recgonize that as a DnD class")
             end
         end
+
+
 end
