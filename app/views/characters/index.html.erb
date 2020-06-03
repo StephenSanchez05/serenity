@@ -1,5 +1,5 @@
 <h2>Characters Index</h2><br>
-<p>Welcome <%= @user.name %> <%= @user %> <img src="<%= @user.image %>"></p><br>
+<p>Welcome <%= @user.name %> <img src="<%= @user.image %>"></p><br>
 <p>Below is a list of all your characters.  If you would like to create a new character please <%= link_to "Click Here!", '/characters/new' %></p><br>
 <h3>Low Level Characters (Levels 1-9) </h3><br>
 <ul><% @user.characters.low_level.each do |c| %>
