@@ -1,5 +1,5 @@
 <h2>Spells Index</h2><br>
-<p>Welcome <%= @user.name %> <img src="<%= @user.image %>"></p><br>  
+<p>Welcome <%= @user.name %> <img src="<%= @user.image %>"></p>
 <p>Below is a list of all your Spells.  If you would like to create a new spell please <%= link_to "Click Here!", '/spells/new' %></p><br>
 <ul>
 <% @user.spells.each do |s| %>
