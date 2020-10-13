@@ -4,16 +4,98 @@
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= javascript_tag 'application', 'data-turbolinks-track': 'reload' %>
 <style>
-h1 { text-align: center; color: rgb(255, 52, 0); font-family: cursive;}
-nav { text-align: center; background-color: grey; padding: 0 100px;}
-fb { text-align: right;}
+nav {
+	margin: 27px auto 0;
+
+	position: relative;
+	width: 310px;
+	height: 50px;
+	background-color: #34495e;
+	border-radius: 8px;
+	font-size: 0;
+}
+nav a {
+	line-height: 50px;
+	height: 100%;
+	font-size: 15px;
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+}
+nav .animation {
+	position: absolute;
+	height: 100%;
+	top: 0;
+	z-index: 0;
+	transition: all .5s ease 0s;
+	border-radius: 8px;
+}
+a:nth-child(1) {
+	width: 100px;
+}
+a:nth-child(2) {
+	width: 110px;
+}
+a:nth-child(3) {
+	width: 100px;
+}
+
+nav .start-home, a:nth-child(1):hover~.animation {
+	width: 100px;
+	left: 0;
+	background-color: #1abc9c;
+}
+nav .start-about, a:nth-child(2):hover~.animation {
+	width: 110px;
+	left: 100px;
+	background-color: #e74c3c;
+}
+nav .start-blog, a:nth-child(3):hover~.animation {
+	width: 100px;
+	left: 210px;
+	background-color: #3498db;
+}
+
+body {
+	font-size: 12px;
+    font-family: sans-serif;
+    background-image: url("https://imgur.com/7zsPyZd");
+}
+h1 {
+	text-align: center;
+	margin: 40px 0 40px;
+	text-align: center;
+	font-size: 30px;
+	color: #ecf0f1;
+	text-shadow: 2px 2px 4px #000000;
+	font-family: 'Cherry Swash', cursive;
+}
+
+p {
+display: block;
+margin-top: 1em;
+margin-bottom: 1em;
+margin-left: 0;
+margin-right: 0;
+}
+
+span {
+    color: #2BD6B4;
+}
 </style>
     </head>
     <br>
     <body>
     <h1>Serenity</h1>
     <nav><%= link_to "Home", '/welcome/home', :method => :get %>  <%= link_to "Characters", '/characters', :method => :get %>  
-    <%= link_to "Spells", '/spells', :method => :get %> <%= button_to "Log Out", logout_path, :method => :delete %></nav>
+    <%= link_to "Spells", '/spells', :method => :get %> <%= button_to "Log Out", logout_path, :method => :delete %>
+    <div class="animation start-home"></div>
+    </nav>
 
     <%= yield %>
 
